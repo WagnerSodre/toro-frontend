@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="container">
+    <div *ngIf="userPosition" class="row">
+
+        <div class="col-md-4 col-xl-3" *ngFor="let position of userPosition.positions;">
+            <div [ngClass]="position.color" class="card order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Amount:<span class="f-right">{{position.amount}}</span></h6>
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>{{position.symbol}}</span></h2>
+                    <p class="m-b-0">Current Price:<span class="f-right">{{position.currentPrice}}</span></p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Account Amount: {{userPosition.checkingAccountAmount}} <br> Consolidated: {{userPosition.consolidated}}</h2>
+
+	</div>
+</div>
